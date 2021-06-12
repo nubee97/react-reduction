@@ -4,7 +4,7 @@
 
 ## Preview
 
-You can check out [live preview](https://reduction-admin.github.io/react-reduction/).
+You can check out [live preview](https://github.com/CSID-DGU/2021-1-CECD3-Websters-4.git/).
 
 ## Quick Start
 
