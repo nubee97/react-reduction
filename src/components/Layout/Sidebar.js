@@ -1,27 +1,26 @@
-import logo200Image from 'assets/img/logo/logo_200.png';
-import sidebarBgImage from 'assets/img/sidebar/sidebar-4.jpg';
+import logo200Image from 'assets/img/logo/websters.PNG';
+import sidebarBgImage from 'assets/img/sidebar/notes.jpg';
 import SourceLink from 'components/SourceLink';
 import React from 'react';
-import { FaGithub } from 'react-icons/fa';
 import {
   MdAccountCircle,
   MdArrowDropDownCircle,
   MdBorderAll,
-  MdBrush,
+ // MdBrush,
   MdChromeReaderMode,
   MdDashboard,
   MdExtension,
   MdGroupWork,
   MdInsertChart,
   MdKeyboardArrowDown,
-  MdNotificationsActive,
+ // MdNotificationsActive,
   MdPages,
-  MdRadioButtonChecked,
+ // MdRadioButtonChecked,
   MdSend,
-  MdStar,
+//  MdStar,
   MdTextFields,
   MdViewCarousel,
-  MdViewDay,
+ // MdViewDay,
   MdViewList,
   MdWeb,
   MdWidgets,
@@ -39,35 +38,36 @@ import bn from 'utils/bemnames';
 
 const sidebarBackground = {
   backgroundImage: `url("${sidebarBgImage}")`,
-  backgroundSize: 'cover',
-  backgroundRepeat: 'no-repeat',
+  //background: 'secondaryColor',
+  //backgroundSize: 'cover',
+  //backgroundRepeat: 'no-repeat',
 };
 
 const navComponents = [
-  { to: '/buttons', name: 'buttons', exact: false, Icon: MdRadioButtonChecked },
-  {
-    to: '/button-groups',
-    name: 'button groups',
-    exact: false,
-    Icon: MdGroupWork,
-  },
+  //{ to: '/buttons', name: 'buttons', exact: false, Icon: MdRadioButtonChecked },
+  // {
+  //   to: '/button-groups',
+  //   name: 'button groups',
+  //   exact: false,
+  //   Icon: MdGroupWork,
+  // },
   { to: '/forms', name: 'forms', exact: false, Icon: MdChromeReaderMode },
-  { to: '/input-groups', name: 'input groups', exact: false, Icon: MdViewList },
-  {
-    to: '/dropdowns',
-    name: 'dropdowns',
-    exact: false,
-    Icon: MdArrowDropDownCircle,
-  },
-  { to: '/badges', name: 'badges', exact: false, Icon: MdStar },
-  { to: '/alerts', name: 'alerts', exact: false, Icon: MdNotificationsActive },
-  { to: '/progress', name: 'progress', exact: false, Icon: MdBrush },
-  { to: '/modals', name: 'modals', exact: false, Icon: MdViewDay },
+  // { to: '/input-groups', name: 'input groups', exact: false, Icon: MdViewList },
+  // {
+  //   to: '/dropdowns',
+  //   name: 'dropdowns',
+  //   exact: false,
+  //   Icon: MdArrowDropDownCircle,
+  // },
+ // { to: '/badges', name: 'badges', exact: false, Icon: MdStar },
+ // { to: '/alerts', name: 'alerts', exact: false, Icon: MdNotificationsActive },
+ // { to: '/progress', name: 'progress', exact: false, Icon: MdBrush },
+ // { to: '/modals', name: 'modals', exact: false, Icon: MdViewDay },
 ];
 
 const navContents = [
-  { to: '/typography', name: 'typography', exact: false, Icon: MdTextFields },
-  { to: '/tables', name: 'tables', exact: false, Icon: MdBorderAll },
+  // { to: '/typography', name: 'typography', exact: false, Icon: MdTextFields },
+  // { to: '/tables', name: 'tables', exact: false, Icon: MdBorderAll },
 ];
 
 const pageContents = [
@@ -82,9 +82,9 @@ const pageContents = [
 
 const navItems = [
   { to: '/', name: 'dashboard', exact: true, Icon: MdDashboard },
-  { to: '/cards', name: 'cards', exact: false, Icon: MdWeb },
-  { to: '/charts', name: 'charts', exact: false, Icon: MdInsertChart },
-  { to: '/widgets', name: 'widgets', exact: false, Icon: MdWidgets },
+  // { to: '/cards', name: 'cards', exact: false, Icon: MdWeb },
+  // { to: '/charts', name: 'charts', exact: false, Icon: MdInsertChart },
+  // { to: '/widgets', name: 'widgets', exact: false, Icon: MdWidgets },
 ];
 
 const bem = bn.create('sidebar');
@@ -108,7 +108,7 @@ class Sidebar extends React.Component {
 
   render() {
     return (
-      <aside className={bem.b()} data-image={sidebarBgImage}>
+      <aside className={bem.b()} data-image={"/"}>
         <div className={bem.e('background')} style={sidebarBackground} />
         <div className={bem.e('content')}>
           <Navbar>
@@ -121,7 +121,7 @@ class Sidebar extends React.Component {
                 alt=""
               />
               <span className="text-white">
-                Reduction <FaGithub />
+                Websters 
               </span>
             </SourceLink>
           </Navbar>
@@ -182,7 +182,7 @@ class Sidebar extends React.Component {
               ))}
             </Collapse>
 
-            <NavItem
+            {/* <NavItem
               className={bem.e('nav-item')}
               onClick={this.handleClick('Contents')}
             >
@@ -203,7 +203,7 @@ class Sidebar extends React.Component {
                   }}
                 />
               </BSNavLink>
-            </NavItem>
+            </NavItem> */}
             <Collapse isOpen={this.state.isOpenContents}>
               {navContents.map(({ to, name, exact, Icon }, index) => (
                 <NavItem key={index} className={bem.e('nav-item')}>

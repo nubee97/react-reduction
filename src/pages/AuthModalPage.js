@@ -52,7 +52,7 @@ class AuthModalPage extends React.Component {
         <Row>
           <Col md="12" sm="12" xs="12">
             <Card>
-              <CardHeader>Login Modal Example</CardHeader>
+              <CardHeader>Login</CardHeader>
               <CardBody>
                 <Button color="danger" onClick={this.toggle}>
                   Click to Login

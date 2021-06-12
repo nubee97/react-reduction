@@ -1,18 +1,15 @@
 import Avatar from 'components/Avatar';
 import { UserCard } from 'components/Card';
-import Notifications from 'components/Notifications';
+//import Notifications from 'components/Notifications';
 import SearchInput from 'components/SearchInput';
-import { notificationsData } from 'demos/header';
+//import { notificationsData } from 'demos/header';
 import withBadge from 'hocs/withBadge';
 import React from 'react';
 import {
   MdClearAll,
   MdExitToApp,
-  MdHelp,
-  MdInsertChart,
-  MdMessage,
   MdNotificationsActive,
-  MdNotificationsNone,
+  //MdNotificationsNone,
   MdPersonPin,
   MdSettingsApplications,
 } from 'react-icons/md';
@@ -42,7 +39,7 @@ const MdNotificationsActiveWithBadge = withBadge({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  children: <small>5</small>,
+  // children: <small>5</small>,
 })(MdNotificationsActive);
 
 class Header extends React.Component {
@@ -86,58 +83,30 @@ class Header extends React.Component {
           </Button>
         </Nav>
         <Nav navbar>
+          {/* Use Search Engine */}
           <SearchInput />
         </Nav>
 
         <Nav navbar className={bem.e('nav-right')}>
-          <NavItem className="d-inline-flex">
-            <NavLink id="Popover1" className="position-relative">
-              {isNotificationConfirmed ? (
-                <MdNotificationsNone
-                  size={25}
-                  className="text-secondary can-click"
-                  onClick={this.toggleNotificationPopover}
-                />
-              ) : (
-                <MdNotificationsActiveWithBadge
-                  size={25}
-                  className="text-secondary can-click animated swing infinite"
-                  onClick={this.toggleNotificationPopover}
-                />
-              )}
-            </NavLink>
-            <Popover
-              placement="bottom"
-              isOpen={this.state.isOpenNotificationPopover}
-              toggle={this.toggleNotificationPopover}
-              target="Popover1"
-            >
-              <PopoverBody>
-                <Notifications notificationsData={notificationsData} />
-              </PopoverBody>
-            </Popover>
-          </NavItem>
-
           <NavItem>
             <NavLink id="Popover2">
               <Avatar
                 onClick={this.toggleUserCardPopover}
                 className="can-click"
-              />
-            </NavLink>
+              /> </NavLink>
             <Popover
               placement="bottom-end"
               isOpen={this.state.isOpenUserCardPopover}
               toggle={this.toggleUserCardPopover}
               target="Popover2"
               className="p-0 border-0"
-              style={{ minWidth: 250 }}
+              style={{ minWidth: 150 }}
             >
               <PopoverBody className="p-0 border-light">
                 <UserCard
-                  title="Jane"
-                  subtitle="jane@jane.com"
-                  text="Last updated 3 mins ago"
+                  title="Websters"
+                  subtitle="websters@dgu.ac.kr"
+                  text="Just got started"
                   className="border-light"
                 >
                   <ListGroup flush>
@@ -145,16 +114,7 @@ class Header extends React.Component {
                       <MdPersonPin /> Profile
                     </ListGroupItem>
                     <ListGroupItem tag="button" action className="border-light">
-                      <MdInsertChart /> Stats
-                    </ListGroupItem>
-                    <ListGroupItem tag="button" action className="border-light">
-                      <MdMessage /> Messages
-                    </ListGroupItem>
-                    <ListGroupItem tag="button" action className="border-light">
-                      <MdSettingsApplications /> Settings
-                    </ListGroupItem>
-                    <ListGroupItem tag="button" action className="border-light">
-                      <MdHelp /> Help
+                      <MdSettingsApplications /> 설정
                     </ListGroupItem>
                     <ListGroupItem tag="button" action className="border-light">
                       <MdExitToApp /> Signout
