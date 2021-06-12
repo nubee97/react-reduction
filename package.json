@@ -1,8 +1,8 @@
 {
-  "name": "react-reduction",
+  "name": "websters",
   "version": "1.1.0",
   "private": false,
-  "homepage": "https://reduction-admin.github.io/react-reduction",
+  "homepage": "https://github.com/CSID-DGU/2021-1-CECD3-Websters-4.git",
   "dependencies": {
     "bootstrap": "4.3.1",
     "chart.js": "2.7.2",
